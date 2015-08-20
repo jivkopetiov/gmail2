@@ -1,0 +1,32 @@
+﻿
+
+<table>
+
+    
+
+    <tr>
+        <td>To:</td>
+        <td><select class="users-select" ng-model="to" ng-options="user.Name for user in users" multiple /></td>
+    </tr>
+
+    <tr>
+        <td>Subject:</td>
+        <td><input type="text" ng-model="title" style="width:400px" /> </td>
+    </tr>
+
+    <tr>
+        <td>Body:</td>
+        <td><textarea ng-model="body" style="width:400px;height:600px"></textarea></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            <button class="gmail-button" ng-click="createPost()">Send</button>
+            <button class="gmail-button" ng-click="discardPost()">Discard</button>
+        </td>
+    </tr>
+
+</table>
+
+ 

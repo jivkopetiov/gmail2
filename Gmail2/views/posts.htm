@@ -1,0 +1,61 @@
+﻿<div id="operations">
+
+    <button ng-click="deleteSelected()" ng-disabled="checkedPosts().length === 0">Delete</button>
+
+    <button ng-click="markAsRead()" ng-disabled="checkedPosts().length === 0">Mark as Read</button>
+
+    <button ng-click="refresh()">Refresh</button>
+
+    <input type="text" ng-enter="searchClicked()" ng-model="searchText" />
+
+</div>
+
+<br />
+
+<div id="posts" ng-if="Posts && Posts.length">
+    <table>
+
+        <tr ng-repeat="post in Posts" id="{{ post.Id }}" ng-class="{ 'unread': !post.IsRead }" x-lvl-draggable="true">
+            <td width="20">
+                <input type="checkbox" ng-model="post.IsChecked" />
+            </td>
+            <td ng-click="favorite(post)" width="20">
+                <a ng-class="{'star': !post.IsFavorite, 'starred': post.IsFavorite }">
+                    <img width="15" src="/images/cleardot.gif" />
+                </a>
+            </td>
+            <td ng-click="postClicked(post)" width="120">
+                {{post.Sender.Name}}
+            </td>
+            <td ng-click="postClicked(post)" width="750" style="overflow:hidden">
+
+                <span class="tag" ng-repeat="tag in getVisibleTags(post.Tags)" ng-click="tagClicked(post, tag)">
+                    {{tag}}
+                </span>
+
+                {{post.Subject | trimSubject}} - <span class="body">{{post.Body | trimBody}}</span>
+
+            </td>
+            <td ng-click="postClicked(post)" width="20">
+                <img class="attachment" src="/images/cleardot.gif" ng-if="post.Attachments.length" />
+            </td>
+
+            <td ng-click="postClicked(post)">
+                {{post.DateSent | dateOffset}}
+            </td>
+        </tr>
+
+    </table>
+
+    <div style="margin-right:10px">
+        <span id="paging" style="float: right">
+            {{ (page * 20) + 1 }}-{{ (page * 20) + Posts.length }} of {{totalPages}}
+
+            <a id="prev" ng-if="page >= 1" ng-click="getPage(page-1)">Prev</a>
+
+            <a id="next" ng-if="( (page + 1) * 20) <= totalPages" ng-click="getPage(page+1)">Next</a>
+        </span>
+    </div>
+</div>
+
+<div ng-if="!Posts || !Posts.length">No results</div>

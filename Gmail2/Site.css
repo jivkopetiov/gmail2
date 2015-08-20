@@ -1,0 +1,176 @@
+body
+{
+    font-family: arial,sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.unread 
+{
+    font-weight: bold;
+    }
+
+a {text-decoration: none;}
+a:hover { cursor:pointer; }
+
+#paging
+{
+    font-weight:bold;
+    float:right;
+}
+
+#paging a
+{
+    font-weight:normal;
+    margin-left:4px;
+}
+
+.top {
+    margin-top: 15px;
+    margin-left:15px;
+    width:1320px;
+    height:66px;
+}
+
+.top #heading {
+    float:left;
+    font-weight:bold;
+    font-size: 20px;
+}
+
+.top #actions {
+    float:right;
+}
+
+.left 
+{
+    width: 176px;
+    margin-left: 15px;
+    height: 600px;
+    margin-right:40px;
+    float:left;
+    position:relative;
+}
+
+.right 
+{
+    width:1200px;
+    float:left;
+}
+
+#folders 
+{
+    margin-top: 20px;
+}
+
+#folders a.selected {
+    color:#DD4B39;
+}
+
+.gmail-button 
+{
+    background-color: #D14836;
+    width:100px;
+    color: White;
+    border-radius: 2px 2px 2px 2px;
+    cursor: pointer;
+    font-size: 15px;
+    height: 27px;
+    line-height: 27px;
+    outline: 0 none;
+    padding: 0 8px;
+    text-align: center;
+}
+
+.gmail-button a {
+    color: White;
+}
+
+#posts
+{
+    font-size: 80%;
+    width:1200px;
+    color: #000000;
+    white-space: nowrap;
+    cursor: pointer;
+    background: none repeat scroll 0 0 #edf0f9;
+    vertical-align: middle;
+    overflow: hidden;
+    border-style: solid;
+    border-color: #BBCCFF;
+    border-width: 5px;
+}
+
+#posts table {
+    width:100%;
+    table-layout: fixed;
+}
+
+#posts tr td
+{
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.star img
+{
+    background: url("images/icons.png") no-repeat scroll 0px -20px transparent;
+}
+
+.starred img
+{
+    background: url("images/icons.png") no-repeat scroll -20px -20px transparent;
+}
+
+.important
+{
+    background: url("images/icons2.png") no-repeat scroll 0 -20px transparent;
+    height: 10px;
+    width: 14px;
+}
+
+.attachment
+{
+    background: url("images/icons.png") no-repeat scroll -120px -40px transparent;
+    height: 15px;
+    width: 15px;
+}
+
+.sender
+{
+    padding-bottom: 1px;
+    padding-left: 3px;
+    padding-right: 6px;
+}
+
+#posts .body
+{
+    color: #777777;
+}
+
+.tag {
+    font-weight: normal;
+    background-color: #DDDDDD;
+    color: #666666;
+    padding: 0 5px;
+    margin: 0 2px;
+    text-align:center;
+    display:inline-block;
+}
+
+div.lvl-over {
+	/* applied to a drop target when a draggable object is over it */
+	border: 2px dashed black !important;
+}
+
+.lvl-target {
+	/* 
+	applied to all drop targets when a drag operation begins 
+	removed when the drag operation ends
+	used to indicate drop targets on a page 
+	*/
+	background-color: #ddd;
+}
+
+.users-select {
+    width: 400px;
+}

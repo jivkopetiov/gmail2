@@ -1,0 +1,36 @@
+﻿<div id="post">
+
+    <div style="font-size:18px;font-weight:bold">{{post.Subject}}</div>
+    <div style="height:20px;border-bottom:solid 1px"></div>
+    <div style="height:20px"></div>
+
+    <div style="float:left">
+        <img src="/images/profile_mask2.png" />
+    </div>
+
+    <div style="margin-left:44px;height:32px"><b>{{post.Sender.Name}}</b> to <span ng-repeat="user in post.Recepients | limitTo:4">{{user.Name}}{{$last ? '' : ', '}} </span>
+        <div style="float:right">
+            <img ng-if="post.Attachments" class="attachment" src="/images/cleardot.gif" />
+            <a ng-click="favorite(post)" ng-class="{'star': !post.IsFavorite, 'starred': post.IsFavorite }"><img width="15" src="/images/cleardot.gif" /></a>
+        </div>
+    </div>
+    
+    <div style="height:20px;border-bottom:solid 1px"></div>
+    <div style="height:20px"></div>
+
+    <div style="margin-left:44px">{{post.Body}}</div>
+
+    <div style="height:20px"></div>
+
+    <div style="margin-left:44px">
+        <div ng-repeat="attachment in post.Attachments">
+            <img class="attachment" src="/images/cleardot.gif" />
+            {{attachment.Size | friendlySizeFromBytes}}:
+            <a ng-click="attachmentClick(post, attachment)" href="#">{{attachment.Title}} </a>
+        </div>
+    </div>
+
+    <div style="height:20px;border-bottom:solid 1px"></div>
+    <div style="height:20px"></div>
+
+</div>

@@ -1,0 +1,22 @@
+﻿
+compose - user
+compose - tags
+compose - upload attachments
+manage tags
+colored tags
+test in IE and firefox
+test in ipad
+
+BUG: tags can be dragged
+
+
+
+LOW PRIORITY
+check all checkboxes
+sort listing by date - ascending/descending
+pager - last page, first page
+next/prev should have permalinks
+to check google api for gmail
+move to button
+tag as button
+move server to web api
